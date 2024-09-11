@@ -1,5 +1,6 @@
 ﻿using FarmHelper.Commands;
 using FarmHelper.Model;
+using FarmHelper.View;
 using System.ComponentModel;
 using System.Windows.Input;
 
@@ -11,14 +12,20 @@ namespace FarmHelper.ViewModel
         private int runCount;
         private double currentProbability;
         public ICommand AddRunCommand { get; set; }
+        public ICommand HelpWindowCommand {  get; set; }
 
         public FarmViewModel()
         {
             calculator = new FarmCalculator(1, 10); // Default drop chance and mobs per run
             AddRunCommand = new RelayCommand(AddRun, CanAddRun);
+            HelpWindowCommand = new RelayCommand(HelpWindow, CanHelpWindow);
         }
 
         private bool CanAddRun(object obj)
+        {
+            return true;
+        }
+        private bool CanHelpWindow(object obj)
         {
             return true;
         }
@@ -82,6 +89,14 @@ namespace FarmHelper.ViewModel
         {
             RunCountProp++;
             CurrentProbabilityProp = calculator.CalculateProbability(RunCountProp);
+        }
+
+        private void HelpWindow(object obj)
+        {
+            HelpWindow helpWindow = FarmHelper.View.HelpWindow.GetInstance();
+            helpWindow.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            helpWindow.Show();
+            helpWindow.Activate();
         }
 
         private void ResetCalculator()

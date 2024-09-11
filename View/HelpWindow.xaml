@@ -1,0 +1,27 @@
+﻿<Window x:Class="FarmHelper.View.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FarmHelper.View"
+        mc:Ignorable="d"
+        Title="Help" Height="300" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Margin="15" FontSize="14">
+            <Run>This app helps you keep track of your in-game farming runs and helps with the item drop chance probability.</Run>
+            <Run>To use it, follow these steps:</Run>
+        </TextBlock>
+
+        <StackPanel Margin="15,80,15,20">
+            <TextBlock Text="1. Enter the drop chance percentage and number of mobs you can kill in a single run." 
+               FontSize="12" TextWrapping="Wrap" Margin="0,5"/>
+            <TextBlock Text="2. On the 'Calculate' tab start tracking your farming rotations." 
+               FontSize="12" TextWrapping="Wrap" Margin="0,5"/>
+            <TextBlock Text="3. Monitor the probability of the desired item drop chance and reset if needed." 
+               FontSize="12" TextWrapping="Wrap" Margin="0,5"/>
+            <TextBlock Text="4. If the item has dropped or you want to edit the properties, switch back to the 'Input Details' tab." 
+               FontSize="12" TextWrapping="Wrap" Margin="0,5"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

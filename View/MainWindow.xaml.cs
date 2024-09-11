@@ -18,7 +18,7 @@ namespace FarmHelper
             this.DataContext = farmViewModel;
         }
 
-        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void TextBox_PreviewTextInputDropChance(object sender, TextCompositionEventArgs e)
         {
             TextBox? textBox = sender as TextBox;
             string currentText = textBox.Text;
@@ -32,6 +32,15 @@ namespace FarmHelper
             else
             {
                 e.Handled = regex.IsMatch(e.Text);
+            }
+        }
+
+        private void TextBox_PreviewTextInputMobCount(object sender, TextCompositionEventArgs e)
+        {
+            TextBox? textBox = sender as TextBox;
+            if(!char.IsDigit(e.Text[0]) || textBox.Text.Length >= 9)
+            {
+                e.Handled = true; // Disallow the input if not valid
             }
         }
 
