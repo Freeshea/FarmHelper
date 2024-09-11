@@ -15,6 +15,10 @@ namespace FarmHelper.Model
 
         public double CalculateProbability(int numberOfRuns)
         {
+            if(numberOfRuns < 0)
+            {
+                return 0;
+            }
             double probability = 1 - Math.Pow(1 - (dropChance / 100), mobCount * numberOfRuns);
             return probability; // 0.00 - 1.00
         }
@@ -23,6 +27,11 @@ namespace FarmHelper.Model
         {
             double prob = 0;
             int runs = 0;
+
+            if(targetProbability<0.0001 || targetProbability>=1)
+            {
+                return 0;
+            }
             while(prob < targetProbability)
             {
                 runs++;
