@@ -45,6 +45,12 @@
 
                     <!-- Button to Add a Run -->
                     <Button Content="Add Run" Command="{Binding AddRunCommand}" Width="100" Height="30" Margin="10"/>
+
+                    <!-- Required runs -->
+                    <TextBlock  FontSize="12" FontWeight="Bold" TextAlignment="Center" Margin="10,15">
+                        <Run Text="Required runs to reach 90% probability:"></Run>
+                        <Run Text="{Binding RequiredRunsProp}"></Run>
+                    </TextBlock>
                 </StackPanel>
             </TabItem>
         </TabControl>

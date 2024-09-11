@@ -11,6 +11,7 @@ namespace FarmHelper.ViewModel
         private FarmCalculator calculator;
         private int runCount;
         private double currentProbability;
+        private int requiredRuns;
         public ICommand AddRunCommand { get; set; }
         public ICommand HelpWindowCommand {  get; set; }
 
@@ -19,6 +20,7 @@ namespace FarmHelper.ViewModel
             calculator = new FarmCalculator(1, 10); // Default drop chance and mobs per run
             AddRunCommand = new RelayCommand(AddRun, CanAddRun);
             HelpWindowCommand = new RelayCommand(HelpWindow, CanHelpWindow);
+            UpdateRequiredRuns();
         }
 
         private bool CanAddRun(object obj)
@@ -28,6 +30,16 @@ namespace FarmHelper.ViewModel
         private bool CanHelpWindow(object obj)
         {
             return true;
+        }
+
+        public int RequiredRunsProp
+        {
+            get => requiredRuns;
+            set
+            {
+                requiredRuns = value;
+                OnPropertyChanged(nameof(RequiredRunsProp));
+            }
         }
 
         public double DropChanceProp
@@ -42,6 +54,7 @@ namespace FarmHelper.ViewModel
                 {
                     calculator.dropChance = value;
                     ResetCalculator();
+                    UpdateRequiredRuns();
                     OnPropertyChanged(nameof(DropChanceProp));
                 }
             }
@@ -59,6 +72,7 @@ namespace FarmHelper.ViewModel
                 {
                     calculator.mobCount = value;
                     ResetCalculator();
+                    UpdateRequiredRuns();
                     OnPropertyChanged(nameof(MobCountProp));
                 }
             }
@@ -84,7 +98,10 @@ namespace FarmHelper.ViewModel
             }
         }
 
-
+        private void UpdateRequiredRuns()
+        {
+            RequiredRunsProp = calculator.CalculateRequiredRuns(0.9); // Calculate necessary runs for at least 90% probability
+        }
         private void AddRun(object obj)
         {
             RunCountProp++;
