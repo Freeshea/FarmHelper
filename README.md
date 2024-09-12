@@ -36,8 +36,8 @@ The purpose of this application is to offer mental guidance in deciding whether 
 - NUnit Framework for running unit tests
 
 ## Screenshots
-<img src="(https://github.com/user-attachments/assets/570903d6-61ad-46b3-bae8-50996e5b67f4)" alt="FarmHelperDetailsTab"/>
-<img src="(https://github.com/user-attachments/assets/c5bc6d22-8ec9-4fc0-afc0-1aaccc318bf7)" alt="FarmHelperCalculateTab"/>
+![FarmHelper1](https://github.com/user-attachments/assets/5ef88a24-e563-4cd3-b4f3-98da1f6f5235)
+![FarmHelper2](https://github.com/user-attachments/assets/be274422-dad1-4708-9549-94b420969e35)
 
 - Used software:
   - Microsoft Visual Studio
