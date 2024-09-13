@@ -1,5 +1,5 @@
 # FarmHelper
-FarmHelper is a C#, WPF (Windows Presentation Foundation) application built using the MVVM (Model-View-ViewModel) design pattern. It helps players track farming rotations in World of Warcraft or similar games (mainly MMOs), where you have a percentage-based drop chance of looting specific items from mobs. 
+FarmHelper is a WPF (Windows Presentation Foundation) application built using the MVVM (Model-View-ViewModel) design pattern. It helps players track farming rotations in World of Warcraft or similar games (mainly MMOs), where you have a percentage-based drop chance of looting specific items from mobs. 
 The item drop chance in games like World of Warcraft is purely luck-based and independent for each kill, meaning the probability does not change for each individual kill. The app calculates the overall probability of whether you *should* have received the item by a given number of kills, or whether it's likely that you *won't* have it yet. 
 
 The purpose of this application is to offer mental guidance in deciding whether to continue farming or take a break by providing a calculated probability based on the number of attempts. It does not alter or affect the in-game mechanics.
@@ -14,8 +14,11 @@ The purpose of this application is to offer mental guidance in deciding whether 
 
 ## Features
 - **Input Details Tab**: 
-  - Allows users to input drop chance, mob count per run, and mob respawn time.
-  - Calculates how many mobs you need to kill to reach a high probability (e.g., 99.9%) of getting the item.
+  - Allows users to input drop chance and mob count per run.
+  - Calculates how many mobs you need to kill to reach a high probability (e.g., 90.0%) of getting the item.
+
+- **Input checks**: 
+  - The input fields enforce strict validation: only numbers can be entered (and decimal point are allowed in the double-type field). If you enter a value that exceeds the allowed range, it will automatically be adjusted to the nearest valid limit (either the maximum or minimum value).
 
 - **Help Window**: 
   - Explains how to use the application, available via a help button.
