@@ -1,6 +1,7 @@
 # FarmHelper
-FarmHelper is a WPF (Windows Presentation Foundation) application built using the MVVM (Model-View-ViewModel) design pattern. It helps players track farming rotations in World of Warcraft or similar games (mainly MMOs), where you have a percentage-based drop chance of looting specific items from mobs. 
-The item drop chance in games like World of Warcraft is purely luck-based and independent for each kill, meaning the probability does not change for each individual kill. The app calculates the overall probability of whether you *should* have received the item by a given number of kills, or whether it's likely that you *won't* have it yet. 
+FarmHelper is a WPF application built using the MVVM design pattern. It helps players track farming rotations in MMO games, where you have a percentage-based drop chance of looting specific items from mobs. 
+Necessary disclaimer: the item drop chances in MMO games are purely luck-based and independent for each kill, meaning the probability does not change for each individual kill.
+The app calculates and displays the overall probability of whether you *should* have received the item by a given number of kills, or whether it's likely that you *won't* have it yet. 
 
 The purpose of this application is to offer mental guidance in deciding whether to continue farming or take a break by providing a calculated probability based on the number of attempts. It does not alter or affect the in-game mechanics.
 
