@@ -11,7 +11,6 @@ The purpose of this application is to offer mental guidance in deciding whether 
 - [Installation](#installation)
 - [Prerequisites](#prerequisites)
 - [Screenshots](#screenshots)
-- [Acknowledgments](#acknowledgments)
 
 ## Features
 - **Input Details Tab**: 
